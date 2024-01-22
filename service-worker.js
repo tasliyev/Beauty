@@ -24,3 +24,9 @@ self.addEventListener('fetch', (event) => {
         .catch(() => caches.match('/'))
     );
   });
+  self.addEventListener('fetch', (event) => {
+    event.respondWith(
+      caches.match(event.request)
+        .then((response) => response || caches.match('/offline.html'))
+    );
+  });
