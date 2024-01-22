@@ -2,7 +2,7 @@
     "name": "SPA Beauty Salon",
     "short_name": "SPA Salon",
     "description": "Your description here",
-    "start_url": "/services",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#333333",
