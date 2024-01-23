@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPA Beauty Salon</title>
   <link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((registration) => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch((error) => {
-        console.error('Service Worker registration failed:', error);
-      });
-  }
-  
-  let deferredPrompt;
-  window.addEventListener('beforeinstallprompt', (event) => {
-    // Prevent the default browser prompt
-    event.preventDefault();
-      // Store the event for later use
-    deferredPrompt = event;
-    // Optionally, you can show your own custom install button
-    showInstallButton();
-  });
-
-      function showInstallButton() {
-        // Display a custom install button on your page
-        // This button should trigger the installation when clicked
-        const installButton = document.getElementById('install-button');
-        installButton.style.display = 'block';
-
-        installButton.addEventListener('click', () => {
-          // Trigger the installation
-          deferredPrompt.prompt();
-          // Wait for the user to respond
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the installation');
-            } else {
-              console.log('User dismissed the installation');
-            }
-            // Reset the deferredPrompt variable
-            deferredPrompt = null;
-            // Hide the install button
-            installButton.style.display = 'none';
-          });
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
         });
-      } 
-</script>
+    }
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (event) => {
+      // Prevent the default browser prompt
+      event.preventDefault();
+      // Store the event for later use
+      deferredPrompt = event;
+      // Optionally, you can show your own custom install button
+      showInstallButton();
+    });
+
+    function showInstallButton() {
+      // Display a custom install button on your page
+      // This button should trigger the installation when clicked
+      const installButton = document.getElementById('install-button');
+      installButton.style.display = 'block';
+
+      installButton.addEventListener('click', () => {
+        // Trigger the installation
+        deferredPrompt.prompt();
+        // Wait for the user to respond
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the installation');
+          } else {
+            console.log('User dismissed the installation');
+          }
+          // Reset the deferredPrompt variable
+          deferredPrompt = null;
+          // Hide the install button
+          installButton.style.display = 'none';
+        });
+      });
+    } 
+  </script>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -99,7 +100,8 @@
     }
 
     img {
-      max-width: 50px; /* Adjust the size as needed */
+      max-width: 50px;
+      /* Adjust the size as needed */
     }
 
     footer {
@@ -111,25 +113,42 @@
       width: 100%;
       bottom: 0;
     }
-    #install-button {
-  background-color: #4CAF50; /* Green */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-#install-button:hover {
-  background-color: #45a049;
-}
+    #install-button {
+      background-color: #4CAF50;
+      /* Green */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #install-button:hover {
+      background-color: #45a049;
+    }
+
+    .simple_button {
+      background-color: #4CAF50;
+      /* Green */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .simple_button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
+
 <body>
 
   <header>
     <h1>SPA Beauty Salon</h1>
-    <button id="install-button">УСТАНОВИТЬ МОБИЛЬНОЕ ПРИЛОЖЕНИЕ</button>
+    <button id="install-button">УСТАНОВИТЕ ПРИЛОЖЕНИЕ, УЗНАВАЙТЕ О 70% СКИДКАХ</button>
   </header>
 
   <section>
@@ -185,11 +204,15 @@
         <img src="200w (4).webp" alt="Service 7">
       </li>
     </ul>
-  </section>
+    <br>
 
+    <center><a href="tel:+99363000588"><button class="simple_button">ПОЗВОНИТЬ В САЛОН БЕСПЛАТНО</button></a></center>
+
+  </section>
   <footer>
     &copy; 2024 SPA Beauty Salon. All rights reserved.
   </footer>
 
 </body>
+
 </html>

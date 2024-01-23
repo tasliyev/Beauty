@@ -79,13 +79,26 @@
 #install-button:hover {
   background-color: #45a049;
 }
+.simple_button {
+      background-color: #4CAF50;
+      /* Green */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .simple_button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>SPA Beauty Salon</h1>
-    <button id="install-button">УСТАНОВИТЬ МОБИЛЬНОЕ ПРИЛОЖЕНИЕ</button>
+    <button id="install-button">УСТАНОВИТЕ ПРИЛОЖЕНИЕ, УЗНАВАЙТЕ О 70% СКИДКАХ</button>
   </header>
 
   <section>
@@ -97,6 +110,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <img src="giphy.gif" alt="Service 1">
+        <a href="tel:"><button style="border: 1px solid black; background-color: aqua;display: flex;">Jan et</button></a>
       </li>
       <li>
         <div>
@@ -141,6 +155,8 @@
         <img src="200w (4).webp" alt="Service 7">
       </li>
     </ul>
+    <br>
+    <center><a href="tel:+99363000588"><button class="simple_button">ПОЗВОНИТЬ В САЛОН БЕСПЛАТНО</button></a></center>
   </section>
 
   <footer>
