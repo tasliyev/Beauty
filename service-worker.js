@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = 'spa-beauty-salon-v1';
+const CACHE_NAME = 'spa-beauty-salon-v8';
 const urlsToCache = [
   '/',
   'index.html', // Include other HTML files if needed
